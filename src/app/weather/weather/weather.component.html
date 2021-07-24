@@ -1,0 +1,25 @@
+<div class="container">
+    <h5>Weather for 5 Cities </h5>
+    <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">City Name</th>
+          <th class="text-center">Temperature</th>
+          <th class="text-center">Sunrise Time</th>
+          <th class="text-center">Sunset Time</th>
+          <th class="text-center"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listofCities" routerLink='/details/{{item.id}}/{{item.name}}'>
+          <td  class="text-center" >{{item.name}}</td>
+          <td class="text-center">{{item.main?.temp}}&deg;</td>
+          <td class="text-center">{{item.sys?.sunrise | date:'hh:mm a'}}</td>
+          <td class="text-center">{{item.sys?.sunset | date:'hh:mm a'}}</td>
+          <td class="text-center">  <a  href="javascript:void(0);" title="Next 5 days weather">  Next <i class="fa fa-arrow-right" aria-hidden="true"></i></a></td>
+        </tr>      
+      </tbody>
+    </table>
+</div>         
+  </div>

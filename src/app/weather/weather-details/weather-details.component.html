@@ -1,0 +1,18 @@
+<div class="container">
+  <a routerLink='/weather'> <i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+  <h5>Next 5 Days Weather for {{cityName}}</h5>
+  <div class="row">
+    <div class="col-sm box" *ngFor="let item of list">
+      <div class="center"> {{item.dt_txt | date:'EE h:mm a'}}</div>
+      <div class="row">
+        <div class="col-4">
+          <img [src]="item.main.icon" />
+        </div>
+        <div class="col-6 "><br>
+          {{item.main.temp}}&deg;C
+        </div>
+      </div>
+      <div class="center"> Sea level: &nbsp; &nbsp; <i class="fa fa-tint" aria-hidden="true"></i>
+        {{item.main.sea_level}}</div>
+    </div>
+  </div>
